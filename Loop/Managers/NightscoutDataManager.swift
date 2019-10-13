@@ -127,6 +127,7 @@ final class NightscoutDataManager {
             maximumBasalRatePerHour: settings.maximumBasalRatePerHour,
             maximumBolus: settings.maximumBolus,
             deviceToken: settings.deviceToken,
+            pushEnvironment: settings.pushEnvironmment,
             bundleIdentifier: Bundle.main.bundleIdentifier)
 
         let profile = ProfileSet.Profile(

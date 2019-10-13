@@ -59,6 +59,25 @@ public struct LoopSettings: Equatable {
     
     public var deviceToken: Data?
     
+    public var pushEnvironmment: String? {
+        guard let profilePath = Bundle.main.path(forResource: "embedded", ofType: "mobileprovision"),
+            let content = try? String(contentsOfFile: profilePath, encoding: .isoLatin1)
+        else {
+            return nil
+        }
+        
+        let scanner = Scanner(string: content as String)
+        scanner.scanUpTo("<key>aps-environment", into: nil)
+        scanner.scanUpTo("<string>", into: nil)
+        
+        var scanValue: NSString?
+        guard scanner.scanUpTo("</string>", into: &scanValue), let value = scanValue else {
+            return nil
+        }
+        
+        return value.substring(from: 8)
+    }
+    
     // MARK - Guardrails
 
     public func allowedSensitivityValues(for unit: HKUnit) -> [Double] {
