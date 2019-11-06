@@ -36,7 +36,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationOption = launchOptions?[.remoteNotification]
         
         if let notification = notificationOption as? [String: AnyObject] {
-            deviceManager.handleRemoteNotification(notification)
+            // Delay handling of remote notification to allow deviceToken registration complete before
+            // triggering settings upload, which would upload an empty deviceToken
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.deviceManager.handleRemoteNotification(notification)
+            })
         }
 
         return true
