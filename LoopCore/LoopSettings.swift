@@ -38,6 +38,11 @@ public struct LoopSettings: Equatable {
 
     /// The amount of time since a given date that data should be considered valid
     public let recencyInterval = TimeInterval(minutes: 15)
+    
+    /// Loop completion aging category limits
+    public let completionFreshLimit = TimeInterval(minutes: 6)
+    public let completionAgingLimit = TimeInterval(minutes: 16)
+    public let completionStaleLimit = TimeInterval(hours: 12)
 
     public let batteryReplacementDetectionThreshold = 0.5
 
