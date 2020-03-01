@@ -485,6 +485,7 @@ extension LoopDataManager {
 
     func authorize(_ completion: @escaping () -> Void) {
         // Authorize all types at once for simplicity
+        self.logger.default("requesting HK authorization")
         carbStore.healthStore.requestAuthorization(toShare: shareTypes, read: readTypes) { (success, error) in
             if success {
                 // Call the individual authorization methods to trigger query creation

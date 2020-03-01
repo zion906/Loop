@@ -128,6 +128,9 @@ final class StatusTableViewController: ChartsTableViewController {
 
         if !appearedOnce {
             appearedOnce = true
+            
+            log.default("viewDidAppear first appearance")
+
 
             if deviceManager.loopManager.authorizationRequired {
                 deviceManager.loopManager.authorize {
