@@ -1,7 +1,7 @@
 github "LoopKit/Amplitude-iOS" "2137d5fd44bf630ed33e1e72d7af6d8f8612f270"
 github "LoopKit/CGMBLEKit" "aaa67861eeddfd6dd8b4b59e8d71cfa065fb07f8"
 github "LoopKit/G4ShareSpy" "v1.1"
-github "LoopKit/LoopKit" "4eddcea95f69f31a5e76bec161e447f895b19a76"
+github "LoopKit/LoopKit" "e8967be2ba43296a1df165794be0a71c73eb81a3"
 github "LoopKit/MKRingProgressView" "f548a5c64832be2d37d7c91b5800e284887a2a0a"
 github "LoopKit/dexcom-share-client-swift" "v1.2"
 github "i-schuetz/SwiftCharts" "0.6.5"
